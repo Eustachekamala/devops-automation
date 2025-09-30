@@ -20,7 +20,7 @@ pipeline {
         stage('Build Docker image') {
             steps {
                 script {
-                    sh 'docker build -t eustache21/devops-integration .'
+                    sh 'docker build -t eustachekamala/devops-integration .'
                 }
             }
         }
@@ -35,7 +35,7 @@ pipeline {
                     )]) {
                         sh '''
                             echo "$DOCKER_PASS" | docker login -u "$DOCKER_USER" --password-stdin
-                            docker push eustache21/devops-integration
+                            docker push eustachekamala/devops-integration
                         '''
                     }
                 }
